@@ -17163,6 +17163,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1375737373}
+    - targetCorrespondingSourceObject: {fileID: 8295927678373028719, guid: e39217f2e8741c64285a976d7f40590c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e39217f2e8741c64285a976d7f40590c, type: 3}
 --- !u!4 &1375737369 stripped
 Transform:

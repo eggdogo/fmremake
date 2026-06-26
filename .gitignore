@@ -77,3 +77,4 @@ Assets/.DS_Store
 ._*
 .AppleDouble
 .LSOverride
+.vscode/settings.json
