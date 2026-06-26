@@ -72,3 +72,8 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/.DS_Store
 .DS_Store
+
+# macOS metadata files
+._*
+.AppleDouble
+.LSOverride
