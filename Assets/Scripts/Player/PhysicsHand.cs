@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using easyInputs;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -27,7 +28,6 @@ public class PhysicsHand : MonoBehaviour
     [Header("Other Stuff")]
     public bool IsLocomotion;
 
-    public InputDevice deviceAtXRNode;
     public XRNode node;
     XRController controller;
     Vector3 _previousPosition;
@@ -76,9 +76,9 @@ public class PhysicsHand : MonoBehaviour
         }
 
         // Climbing input handling
-        deviceAtXRNode = InputDevices.GetDeviceAtXRNode(node);
-        deviceAtXRNode.TryGetFeatureValue(CommonUsages.trigger, out triggerValue);
-        deviceAtXRNode.TryGetFeatureValue(CommonUsages.grip, out gripValue);
+        EasyHand inputHand = node == XRNode.LeftHand ? EasyHand.LeftHand : EasyHand.RightHand;
+        triggerValue = EasyInputs.GetTriggerButtonFloat(inputHand);
+        gripValue = EasyInputs.GetGripButtonFloat(inputHand);
 
         if (triggerValue <= 0.8f || gripValue <= 0.8f)
         {

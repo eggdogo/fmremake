@@ -162,11 +162,25 @@ namespace easyInputs
         {
             if (hand == EasyHand.LeftHand)
             {
+                #if UNITY_EDITOR
+                    if (Input.GetKey(KeyCode.Q))
+                    {
+                        value = 1f;
+                        return value;
+                    }
+                #endif
                 InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).TryGetFeatureValue(usage, out value);
                 return value;
             }
             else
             {
+                #if UNITY_EDITOR
+                    if (Input.GetKey(KeyCode.P))
+                    {
+                        value = 1f;
+                        return value;
+                    }
+                #endif
                 InputDevices.GetDeviceAtXRNode(XRNode.RightHand).TryGetFeatureValue(usage, out value);
                 return value;
             }

@@ -79,3 +79,4 @@ Assets/.DS_Store
 .LSOverride
 .vscode/settings.json
 /.vscode
+*.blob
