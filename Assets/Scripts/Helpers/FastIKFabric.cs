@@ -3,8 +3,7 @@ using UnityEditor;
 #endif
 using UnityEngine;
 
-namespace peepeecaca
-{
+
     /// <summary>
     /// Fabrik IK Solver
     /// </summary>
@@ -247,4 +246,3 @@ namespace peepeecaca
         }
 
     }
-}

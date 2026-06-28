@@ -198,6 +198,10 @@ public class PhysicsHand : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+         if (collision.gameObject.layer == gameObject.layer)
+        {
+            return;
+        }
         _isColliding = false;
 
         if (collision.gameObject.tag == ClimbTag)
