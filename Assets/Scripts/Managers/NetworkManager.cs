@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    public string prefabPath = "NetworkMessenger";
+    public string prefabPath = "Player";
 
-    NetworkMessenger networkMessenger;
+    FunkePlayer myPlayer;
 
     public Transform head;
     public Transform leftHand;
@@ -46,10 +46,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         Debug.Log("Joined room!");
-        GameObject networkMessengerObj = PhotonNetwork.Instantiate(prefabPath, Vector3.zero, Quaternion.identity);
-        networkMessenger = networkMessengerObj.GetComponent<NetworkMessenger>();
-        networkMessenger.head = head;
-        networkMessenger.leftHand = leftHand;
-        networkMessenger.rightHand = rightHand;
+        GameObject funkePlayerObj = PhotonNetwork.Instantiate(prefabPath, Vector3.zero, Quaternion.identity);
+        myPlayer = funkePlayerObj.GetComponent<FunkePlayer>();
+        myPlayer.physicalHead = head;
+        myPlayer.physicalLeftHand = leftHand;
+        myPlayer.physicalRightHand = rightHand;
     }
 }
